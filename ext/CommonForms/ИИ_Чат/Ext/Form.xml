@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>ИИ-помощник</v8:content>
+		</v8:item>
+	</Title>
+	<Width>90</Width>
+	<Height>30</Height>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1" />
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОсновная" id="20">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="21" />
+			<ChildItems>
+				<UsualGroup name="ГруппаЧаты" id="22">
+					<Width>30</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЧатыРасширеннаяПодсказка" id="23" />
+					<ChildItems>
+						<CommandBar name="ПанельЧатов" id="24">
+							<ExtendedTooltip name="ПанельЧатовРасширеннаяПодсказка" id="25" />
+							<ChildItems>
+								<Button name="ФормаНовыйЧат" id="26">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.НовыйЧат</CommandName>
+									<ExtendedTooltip name="ФормаНовыйЧатРасширеннаяПодсказка" id="27" />
+								</Button>
+								<Button name="ФормаУдалитьЧат" id="28">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.УдалитьЧат</CommandName>
+									<ExtendedTooltip name="ФормаУдалитьЧатРасширеннаяПодсказка" id="29" />
+								</Button>
+								<Button name="ФормаСправкаПомощника" id="65">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.СправкаПомощника</CommandName>
+									<ExtendedTooltip name="ФормаСправкаПомощникаРасширеннаяПодсказка" id="66" />
+								</Button>
+							</ChildItems>
+						</CommandBar>
+						<Table name="Чаты" id="32">
+							<Representation>Tree</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<SelectionMode>SingleRow</SelectionMode>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Чаты</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ЧатыКонтекстноеМеню" id="33">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ЧатыКонтекстноеМенюУдалитьЧат" id="34">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УдалитьЧат</CommandName>
+										<ExtendedTooltip name="ЧатыКонтекстноеМенюУдалитьЧатРасширеннаяПодсказка" id="35" />
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ЧатыКоманднаяПанель" id="36">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЧатыРасширеннаяПодсказка" id="37" />
+							<SearchStringAddition name="ЧатыСтрокаПоиска" id="38">
+								<AdditionSource>
+									<Item>Чаты</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧатыСтрокаПоискаКонтекстноеМеню" id="39" />
+								<ExtendedTooltip name="ЧатыСтрокаПоискаРасширеннаяПодсказка" id="40" />
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЧатыСостояниеПросмотра" id="41">
+								<AdditionSource>
+									<Item>Чаты</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧатыСостояниеПросмотраКонтекстноеМеню" id="42" />
+								<ExtendedTooltip name="ЧатыСостояниеПросмотраРасширеннаяПодсказка" id="43" />
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЧатыУправлениеПоиском" id="44">
+								<AdditionSource>
+									<Item>Чаты</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧатыУправлениеПоискомКонтекстноеМеню" id="45" />
+								<ExtendedTooltip name="ЧатыУправлениеПоискомРасширеннаяПодсказка" id="46" />
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ЧатыПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ЧатыПредставление" id="47">
+									<DataPath>Чаты.Представление</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЧатыПредставлениеКонтекстноеМеню" id="48" />
+									<ExtendedTooltip name="ЧатыПредставлениеРасширеннаяПодсказка" id="49" />
+								</InputField>
+							</ChildItems>
+						</Table>
+						<CommandBar name="ПанельНастроек" id="61">
+							<ExtendedTooltip name="ПанельНастроекРасширеннаяПодсказка" id="62" />
+							<ChildItems>
+								<Button name="ФормаПравилаБазы" id="30">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ПравилаБазы</CommandName>
+									<ExtendedTooltip name="ФормаПравилаБазыРасширеннаяПодсказка" id="31" />
+								</Button>
+								<Button name="ФормаНастройкиХранилища" id="59">
+									<Type>CommandBarButton</Type>
+									<Visible>false</Visible>
+									<CommandName>Form.Command.НастройкиХранилища</CommandName>
+									<ExtendedTooltip name="ФормаНастройкиХранилищаРасширеннаяПодсказка" id="60" />
+								</Button>
+								<Button name="ФормаИсторияИзменений" id="63">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ИсторияИзменений</CommandName>
+									<ExtendedTooltip name="ФормаИсторияИзмененийРасширеннаяПодсказка" id="64" />
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПереписка" id="50">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПерепискаРасширеннаяПодсказка" id="51" />
+					<ChildItems>
+						<HTMLDocumentField name="История" id="1">
+							<DataPath>История</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>true</VerticalStretch>
+							<ContextMenu name="ИсторияКонтекстноеМеню" id="2" />
+							<ExtendedTooltip name="ИсторияРасширеннаяПодсказка" id="3" />
+							<Events>
+								<Event name="OnClick">ИсторияПриНажатии</Event>
+								<Event name="DocumentComplete">ИсторияДокументСформирован</Event>
+							</Events>
+						</HTMLDocumentField>
+						<LabelField name="Состояние" id="4">
+							<DataPath>Состояние</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="СостояниеКонтекстноеМеню" id="5" />
+							<ExtendedTooltip name="СостояниеРасширеннаяПодсказка" id="6" />
+						</LabelField>
+						<UsualGroup name="ГруппаОтвет" id="52">
+							<Visible>false</Visible>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтветРасширеннаяПодсказка" id="53" />
+							<ChildItems>
+								<LabelField name="ОтветНаПредставление" id="54">
+									<DataPath>ОтветНаПредставление</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ответ на</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ОтветНаПредставлениеКонтекстноеМеню" id="55" />
+									<ExtendedTooltip name="ОтветНаПредставлениеРасширеннаяПодсказка" id="56" />
+								</LabelField>
+								<Button name="ФормаОтменитьОтвет" id="57">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОтменитьОтвет</CommandName>
+									<ExtendedTooltip name="ФормаОтменитьОтветРасширеннаяПодсказка" id="58" />
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаВвод" id="7">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВводРасширеннаяПодсказка" id="8" />
+							<ChildItems>
+								<InputField name="Сообщение" id="9">
+									<DataPath>Сообщение</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Height>3</Height>
+									<VerticalStretch>false</VerticalStretch>
+									<MultiLine>true</MultiLine>
+									<ExtendedEdit>false</ExtendedEdit>
+									<EditTextUpdate>Always</EditTextUpdate>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Введите сообщение (Ctrl+Enter — отправить)</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="СообщениеКонтекстноеМеню" id="10" />
+									<ExtendedTooltip name="СообщениеРасширеннаяПодсказка" id="11" />
+								</InputField>
+								<Button name="ФормаОтправить" id="12">
+									<Type>UsualButton</Type>
+									<DefaultButton>true</DefaultButton>
+									<CommandName>Form.Command.Отправить</CommandName>
+									<ExtendedTooltip name="ФормаОтправитьРасширеннаяПодсказка" id="13" />
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="История" id="1">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Сообщение" id="2">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Состояние" id="3">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторОбновления" id="4">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийЧат" id="5">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтветНа" id="6">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтветНаПредставление" id="7">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Чаты" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Представление" id="1">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Идентификатор" id="2">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Отправить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Отправить</Action>
+		</Command>
+		<Command name="НовыйЧат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новый чат</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НовыйЧат</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="УдалитьЧат" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить чат</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьЧат</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ПравилаБазы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Правила базы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Правила, которые ИИ-помощник учитывает во всех чатах этой базы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПравилаБазы</Action>
+		</Command>
+		<Command name="ОтменитьОтвет" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не отвечать</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтменитьОтвет</Action>
+		</Command>
+		<Command name="НастройкиХранилища" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Хранилище</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Хранилище конфигурации, из которого помощник берёт историю изменений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкиХранилища</Action>
+		</Command>
+		<Command name="ИсторияИзменений" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История изменений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кто и когда менял конфигурацию, расширения, внешние обработки и отчёты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИсторияИзменений</Action>
+		</Command>
+		<Command name="СправкаПомощника" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Как пользоваться ИИ-помощником</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Help</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СправкаПомощника</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ИдентификаторОбновления">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>
